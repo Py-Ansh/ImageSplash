@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+
+{% block title %}Search{%endblock title%}
+
+
+
+
+
+
+
+
+
+
+{% block body %}
+
+<div>
+
+  <section class="pt-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Image Clash</h1>
+        <p class="lead text-body-secondary">Great Choice! Here's what we have found to suit your needs</p>
+        <p>
+          <a href="#" class="btn btn-dark mx-5 mt-5 mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Search Something Else</a>
+          <br>
+          <a onclick="reloadPage()" class="btn btn-dark">Load More</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{photo_urls.1}}" class="bd-placeholder-img card-img-top"  role="img" aria-label="Personal Image">
+            <div class="card-body">
+              <p class="card-text">Photo by {{photographer.1}} on Unsplash</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="downloadImage('{{photo_urls.1}}')">Download</button>
+                </div>
+                <small class="text-body-secondary">🌟</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{photo_urls.2}}" class="bd-placeholder-img card-img-top"  role="img" aria-label="Personal Image">
+            <div class="card-body">
+              <p class="card-text">Photo by {{photographer.2}} on Unsplash</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="downloadImage('{{photo_urls.2}}')">Download</button>
+                </div>
+                <small class="text-body-secondary">🌟</small>
+              </div>
+            </div>
+          </div>
+        </div>
+                <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{photo_urls.3}}" class="bd-placeholder-img card-img-top"  role="img" aria-label="Personal Image">
+            <div class="card-body">
+              <p class="card-text">Photo by {{photographer.3}} on Unsplash</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="downloadImage('{{photo_urls.3}}')">Download</button>
+                </div>
+                <small class="text-body-secondary">🌟</small>
+              </div>
+            </div>
+          </div>
+        </div>
+                <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{photo_urls.4}}" class="bd-placeholder-img card-img-top"  role="img" aria-label="Personal Image">
+            <div class="card-body">
+              <p class="card-text">Photo by {{photographer.4}} on Unsplash</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="downloadImage('{{photo_urls.4}}')">Download</button>
+                </div>
+                <small class="text-body-secondary">🌟</small>
+              </div>
+            </div>
+          </div>
+        </div>
+                <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{photo_urls.5}}" class="bd-placeholder-img card-img-top"  role="img" aria-label="Personal Image">
+            <div class="card-body">
+              <p class="card-text">Photo by {{photographer.5}} on Unsplash</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="downloadImage('{{photo_urls.5}}')">Download</button>
+                </div>
+                <small class="text-body-secondary">🌟</small>
+              </div>
+            </div>
+          </div>
+        </div>
+                <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{photo_urls.0}}" class="bd-placeholder-img card-img-top"  role="img" aria-label="Personal Image">
+            <div class="card-body">
+              <p class="card-text">Photo by {{photographer.0}} on Unsplash</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="downloadImage('{{photo_urls.0}}')">Download</button>
+                </div>
+                <small class="text-body-secondary">🌟</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+function downloadImage(imageUrl) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', imageUrl, true);
+    xhr.responseType = 'blob';
+    xhr.onload = function() {
+        var url = window.URL.createObjectURL(xhr.response);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'image.jpg';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+    };
+    xhr.send();
+}
+
+// for find more
+
+function reloadPage() {
+    location.reload();
+}
+
+</script>
+
+{% endblock body %}

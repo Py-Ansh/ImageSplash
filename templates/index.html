@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+
+{% block title %}Home{%endblock title%}
+
+{% block body %}
+
+
+
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light mb-3">Image Clash</h1>
+        <p class="lead text-body-secondary">Welcome! We'll help you find a picture that You would Love :)</p>
+        <p>
+          <a href="#" class="btn btn-dark my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Start Searching</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+              <img src="https://source.unsplash.com/600x400/?tasty" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Personal Image">
+            <div class="card-body">
+              <p class="card-text">Food nourishes, comforts, and delights, connecting cultures and hearts. It's a celebration, a necessity, a delight and an art form.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Let's Go</button>
+                </div>
+                <small class="text-body-secondary">🌟</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+              <img src="https://source.unsplash.com/1200x800/?nature" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Personal Image">
+            <div class="card-body">
+              <p class="card-text">serene forests, majestic mountains, tranquil rivers, vibrant flora, diverse fauna, soothing breezes, awe-inspiring sunsets, boundless beauty, eternal harmony</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Let's Go</button>
+                </div>
+                <small class="text-body-secondary">🌟</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+              <img src="https://source.unsplash.com/1200x800/?wildlife" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Personal Image">
+            <div class="card-body">
+              <p class="card-text">Wildlife thrives in diverse ecosystems, embodying beauty, resilience, and crucial ecological roles, deserving our respect, protection, and conservation efforts.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Let's Go</button>
+                </div>
+                <small class="text-body-secondary">🌟</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+
+
+
+
+{% endblock body %}
